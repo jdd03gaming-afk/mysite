@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Login Page -->
+  <div class="login-container" id="login-page">
+    <h2>Admin Login</h2>
+    <label>Username:</label>
+    <input type="text" id="username" placeholder="Enter username" />
+    <label>Password:</label>
+    <input type="password" id="password" placeholder="Enter password" />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Dashboard Page -->
+  <div class="dashboard" id="dashboard-page" style="display: none;">
+    <div class="sidebar">
+      <h3>Dashboard Stats</h3>
+      <div class="stat-box">
+        <p>Total Records</p>
+        <h4 id="total-records">0</h4>
+      </div>
+      <div class="stat-box">
+        <p>Current Balance</p>
+        <h4 id="balance">60.40</h4>
+      </div>
+      <div class="stat-box">
+        <p>Price Per Record</p>
+        <h4 id="price">0.40</h4>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="top-bar">
+        <h2>Welcome, <span id="user-name"></span></h2>
+        <div>
+          <button class="delete" onclick="deleteAll()">Delete All Data</button>
+          <button class="logout" onclick="logout()">Logout</button>
+        </div>
+      </div>
+
+      <div class="records">
+        <h3>Your Saved Records</h3>
+        <textarea id="records-box" readonly></textarea>
+        <br />
+        <button onclick="copyAll()">Copy All</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
